@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+    --CorP1: #2b9aa7c5;
+    --CorP2: #1a5d6394;
+}
+
+/*background-image: url("imagens/campo.jpg");*/
+/*background: linear-gradient( rgba(0,0,0,0.2), rgba(0,0,0,0.4)),url('img01.jpg');*/
+
+.header1{
+    background: linear-gradient( rgba(0,0,0,0.6), rgba(0,0,0,0.8)),url('img01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;/* Faz com que a imagem cubra todo o contêiner */
+    background-position: center; /* Centraliza a imagem no contêiner */
+    max-width: 100%;
+}
+.header2{
+    background: linear-gradient( rgba(0,0,0,0.6), rgba(0,0,0,0.8)),url('img1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;/* Faz com que a imagem cubra todo o contêiner */
+    background-position: center; /* Centraliza a imagem no contêiner */
+    max-width: 100%;
+}
+
+
+
+
+/*menu*/
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1% 2%;
+}
+nav > a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 600;
+    font-size: 35px;
+}
+nav ul{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+    list-style: none;
+    width: 100%;
+}/*
+nav li{
+    margin-left: 10px;
+}*/
+nav li a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+nav li a:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+nav ul li a{
+    display: inline-block;
+    width: 100%;
+    color: white;
+}
+/*menu*/
+
+
+.banner{
+    height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.texto .titulo{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+.texto .sub_titulo{
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: 600;
+}
+.texto .botoes{
+    margin-top: 5%;
+    text-decoration: none;
+}
+.texto .botoes button{
+    height: 50px;
+    width: 150px;
+    border-radius: 5px;
+    margin: 0 10px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 0;
+
+}
+
+/*mudar botao*/
+.texto .botoes button.Saiba{
+    color: white;
+    background: none;
+    border: 2px solid white;
+}
+.texto .botoes button.Saiba:hover{
+    color: black;
+    background-color: white;
+}
+.texto .botoes button.Entrar{
+    background: white;
+    color: black;
+}
+/*mudar botao*/
+
+footer{
+    background-color: #0F1819;
+    padding: 2rem;
+}
+
+.destaque{
+    color: var(--CorP2);
+}
+.destaqueH1{
+    color:black;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+
+
+main{
+    display: flex; /* Usa flexbox para organizar os itens */
+    padding: 0.5rem;
+}
+
+h3{
+    padding: 0.5rem 0rem;
+    text-align: center;
+
+}
+.texto-metade {
+    flex: 1; /* Ocupa metade da largura disponível */
+}
+.imagem-metade {
+    flex: 1; /* Ocupa metade da largura disponível */
+}
+.imagem-metade img{
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+.texto-metade{
+    padding: 0.5rem 0rem;
+    text-align: center;
+
+}
+
+@media (min-width: 600px) {
+    h3{
+        font-size: 1.25rem;
+    }
+    .imagem-metade img{
+        padding: 1.5rem;
+        border-radius: 2rem;
+    }
+    .texto-metade{
+        padding: 0rem 1.5rem;    
+    }
+}
+
+@media (max-width: 860px) {
+    main {
+        flex-direction: column;
+    }
+
+    .texto-metade .imagem-metade{
+      flex: 1;
+    }
+}
+@media (min-width: 920px) {
+    .texto-metade h3{
+        font-weight: bold;
+    }
+    .texto-metade p{
+        padding: 1.5rem 0rem;    
+
+
+    }
+}
+@media (min-width: 980px) {
+    .texto-metade p{
+        font-size: 17px
+    }
+}
+@media (min-width: 1100px) {
+    .texto-metade h3{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 360px){
+    .botoes{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+/*Respon*/
+@media (min-width: 360px){
+    .texto .titulo{
+        color: white;
+        font-size: 30px;
+        font-weight: 600;
+        padding: 2%;
+    }
+    .texto .sub_titulo{
+        color: whitesmoke;
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .banner{
+        height: 60vh;
+        flex-basis: 500px;
+
+    }
+
+}
+@media (min-width: 860px){
+    nav{
+        flex-direction: row;
+       /* justify-content: space-around; */
+        justify-content: space-between;
+    }
+    nav ul{
+        flex-direction: row;
+        width: 70%;
+    }
+}
+@media (min-width: 660px){
+    .banner{
+        height: 70vh;
+
+    }
+    .texto .titulo{
+        color: white;
+        font-size: 45px;
+        font-weight: 600;
+        padding: 0%;
+    }
+    .texto .sub_titulo{
+        color: whitesmoke;
+        font-size: 40px;
+        font-weight: 600;
+    }
+}
+
+
+
+
