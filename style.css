@@ -15,7 +15,6 @@ header{
     max-width: 100%;
 
 }
-
 /*header img*/
 .header1{
     background-image: url("imagens/P1/img1.jpg");
@@ -33,18 +32,12 @@ header{
 .header4{
     background-image: url("imagens/P4/img1.jpg");
 }
-.header5{
-    background: #333;
-}
 .header6{
     background-image: url("imagens/P6/img1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-}
-.header7{
-    background: #333;
 }
 /*header final*/
 
@@ -294,6 +287,118 @@ nav li a:hover {
 
 
 
+/*Form-vac*/
+.body-vac {
+    display: flex;
+    flex-direction: column;
+}
+
+.corpo-vac {
+    flex: 1; /* Este item crescerá para preencher o espaço restante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #fffefe, #797979);
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+}
+
+.container-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.h1-form{
+    font-size: 1.75rem;
+    text-align: center;
+    color: #333;
+}
+.h2-form{
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+.h3-form{
+    font-size: 1.25rem;
+    text-align: center;
+    color: #333;
+}
+
+.form-vac{
+    max-width: 400px;
+    margin: 0 auto;
+
+}
+
+.label-form{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #222;
+}
+
+.vaccine-item {
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.vaccine-item:hover {
+    background-color: #f0f0f0;
+}
+
+.delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 60rem;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.delete-button:hover {
+    background-color: #222;
+}
+/*Form-vac-final*/
+
+
+
 /*Form-Cadastro-Entrar*/
 .form-wrapper-main{
     background: linear-gradient(to right, #fffefe, #797979);
@@ -325,7 +430,7 @@ nav li a:hover {
     margin: 15px 0 10px;
 }
 .form-wrapper button {
-    background: #333;
+    background: #718fe9;
     color: #fff;
     font-size: 12.5px;
     padding: 10px 45px;
@@ -338,7 +443,7 @@ nav li a:hover {
     cursor: pointer;
 }
 .form-wrapper button:hover{
-    background: #222;
+    background: #4169e1;
 }
 .form-wrapper button.hidden {
     background: transparent;
@@ -412,7 +517,7 @@ nav li a:hover {
     border-radius: 0 100px 100px 0;
 }
 .switch {
-    background: #222;
+    background: #4169e1;
     color: #fff;
     position: relative;
     left: -100%;
@@ -458,13 +563,6 @@ nav li a:hover {
 
 
 /*Footer*/
-.footer-header{
-    padding: 0px 20px;
-}
-footer{
-    background-color: #333;
-    padding: 20px 0;
-}
 .footer-direitos {
     text-align: center;
     padding: 20px 0;
@@ -610,12 +708,3 @@ footer p{
         padding: 5px 0px;
     }
 }
-
-
-
-
-
-
-
-
-
