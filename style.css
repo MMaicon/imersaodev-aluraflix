@@ -563,6 +563,9 @@ button[type="submit"]:hover {
 
 
 /*Footer*/
+footer{
+    background-color: #333;
+}
 .footer-direitos {
     text-align: center;
     padding: 20px 0;
