@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="ComprasApp">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://mmaicon.github.io/imersaodev-aluraflix/style.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="js/angular.min.js"></script>
+    <script  href="https://mmaicon.github.io/imersaodev-aluraflix/js/angular.min.js" src="app/app.js"></script>
+    <script src="app/controllers/comprasController.js"></script>
     <title>Site simples com html e css</title>
 </head>
 
-<body class="body-vac">
     
     <header class="header5">
         <nav>
@@ -31,111 +34,115 @@
 
 </head>
 
-<div class="corpo-vac">
-    <div class="container-form">
-    <h1 class="h1-form">Ficha de Vacinação para Animais</h1>
-    
-    <!-- Formulário para informações do animal -->
-    <div id="animal-info">
-        <h2 class="h2-form">Informações do Animal</h2>
-        <form class="form-vac" id="animal-form">
-            <label class="label-form" for="animal-name">Nome:</label>
-            <input type="text" id="animal-name" name="animal-name" required><br>
-            
-            <label class="label-form" for="animal-species">Espécie:</label>
-            <input type="text" id="animal-species" name="animal-species" required><br>
-            
-            <label class="label-form" for="animal-breed">Raça:</label>
-            <input type="text" id="animal-breed" name="animal-breed" required><br>
-        </form>
-    </div>
-    
-    <!-- Formulário para adicionar vacina -->
-    <div id="vaccine-form">
-        <h2 class="h3-form">Adicionar Vacina</h2>
-        <form class="form-vac" id="add-vaccine-form">
-            <label class="label-form" for="vaccine-name">Nome da Vacina:</label>
-            <input type="text" id="vaccine-name" name="vaccine-name" required><br>
-            
-            <label class="label-form" for="vaccine-date">Data da Aplicação:</label>
-            <input type="date" id="vaccine-date" name="vaccine-date" required><br>
-            
-            <label class="label-form" for="next-dose-date">Próxima dose:</label>
-            <input type="date" id="next-dose-date" name="next-dose-date"><br>
-            
-            <label class="label-form" for="vaccine-notes">Observações:</label>
-            <textarea id="vaccine-notes" name="vaccine-notes" rows="4" cols="50"></textarea><br>
-            
-            <button type="submit">Adicionar Vacina</button>
-        </form>
-    </div>
-    
-    <!-- Lista de vacinas -->
-    <div id="vaccine-list">
-        <h3 class="form">Lista de Vacinas</h2>
-        <div class="vac" id="vaccine-list-container">
-            <!-- Aqui serão adicionados dinamicamente os itens da lista de vacinas -->
-        </div>
-    </div>
-    </div>
-</div>
+<body class="bocy">
+    <container class="container-b">
+    <div class="box">
+        <form class="form-b" action="">
+            <fieldset>
+                <legend><strong>Formulário do Pet </strong></legend>
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="nome" id="name" class="inputUser" required>
+                    <label for="none" class="labelinput"><b>Nome do Pet:</b></label>
+                    
+                </div><br><br>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const animalForm = document.getElementById('animal-form');
-        const vaccineForm = document.getElementById('add-vaccine-form');
-        const vaccineListContainer = document.getElementById('vaccine-list-container');
-        
-        // Variáveis para armazenar os dados do animal
-        let animalName, animalSpecies, animalBreed;
-        
-        // Evento de captura dos dados do formulário de informações do animal
-        animalForm.addEventListener('input', function() {
-            animalName = animalForm['animal-name'].value;
-            animalSpecies = animalForm['animal-species'].value;
-            animalBreed = animalForm['animal-breed'].value;
-        });
-        
-        // Função para criar um novo item de vacina na lista
-        function addVaccineItem(name, species, breed, vaccineName, vaccineDate, nextDoseDate, vaccineNotes) {
-            const newVaccineItem = document.createElement('div');
-            newVaccineItem.classList.add('vaccine-item');
-            newVaccineItem.innerHTML = `
-                <div><strong>Animal:</strong> ${name}</div>
-                <div><strong>Espécie:</strong> ${species}</div>
-                <div><strong>Raça:</strong> ${breed}</div>
-                <div><strong>Vacina:</strong> ${vaccineName}</div>
-                <div><strong>Data da Aplicação:</strong> ${vaccineDate}</div>
-                <div><strong>Próxima Dose:</strong> ${nextDoseDate || 'Não especificada'}</div>
-                <div><strong>Observações:</strong> ${vaccineNotes || 'Nenhuma informação adicional'}</div>
-                <button class="delete-button">X</button>
-            `;
-            vaccineListContainer.appendChild(newVaccineItem);
-            
-            // Adiciona evento para deletar o item
-            const deleteButton = newVaccineItem.querySelector('.delete-button');
-            deleteButton.addEventListener('click', function() {
-                newVaccineItem.remove();
-            });
-        }
-        
-        // Evento de submissão do formulário de adicionar vacina
-        vaccineForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const vaccineName = vaccineForm['vaccine-name'].value;
-            const vaccineDate = vaccineForm['vaccine-date'].value;
-            const nextDoseDate = vaccineForm['next-dose-date'].value;
-            const vaccineNotes = vaccineForm['vaccine-notes'].value;
-            
-            // Cria um novo item de vacina na lista
-            addVaccineItem(animalName, animalSpecies, animalBreed, vaccineName, vaccineDate, nextDoseDate, vaccineNotes);
-            
-            // Limpa o formulário após adicionar a vacina
-            vaccineForm.reset();
-        });
-    });
-</script>
+                <div class="inputBox">
+                    <input type="text" name="especie" id="especie" class="inputUser" required>
+                    <label for="none" class="labelinput"><b>Especie:</b></label>
+                </div><br>
+
+                <p><b>Genero:</b></p>
+                <input type="radio" id="femea" name="genero" value="Femea" required>
+                <label for="femea"><b>Fêmea</b></label><br>
+
+                <input type="radio" id="macho" name="genero" value="macho" required>
+                <label for="macho"><b>Macho</b></label>
+                <br><br>
+
+
+                <label for="data de nascimento"><b>Data de nascimento:</b></label>
+                <input type="date" name="data_nascimento" id="data_nascimento" required>
+                <br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="raca" id="raca" class="inputUser" required>
+                    <label for="none" class="labelinput"><b>Raça:</b></label>
+                </div><br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="pelagem" id="pelagem" class="inputUser" required>
+                    <label for="none" class="labelinput"><b>Pelagem:</b></label>
+                </div><br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="nometutor" id="nometutor" class="inputUser" required>
+                    <label for="none" class="labelinput"><b>Nome do Tutor:</b></label>
+                </div><br><br>
+
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone" class="labelinput"><b>Telefone/Celular:</b></label>
+                </div><br><br>
+
+                <div class="inputBox">
+                    <input type="text" name="text" id="text" class="inputUser" required>
+                    <label for="none" class="labelinput"><b>Endereço:</b></label>
+                </div><br><br>
+
+
+                <input type="submit" name="submit" id="submit">
+
+
+            </fieldset>
+
+        </form>
+    </div>
+    <div ng-controller="comprasController" class="containerCompra">
+        <fieldset>
+            <legend><strong> Ficha de vacina </strong></legend><br><br>
+            <div class="">
+
+                <div class="inputBox">
+                    <input type="text" name="novaVacina.nome" class="inputUser" ng-model="novaVacina.nome" required>
+                    <label for="novaVacina.nome" class="labelinput"><b>Digite o nome da vacina:</b> </label>
+                </div><br><br>
+                <div class="inputBox">
+                    <input type="text" name="novaVacina.dose" class="inputUser" ng-model="novaVacina.dose" required>
+                    <label for="novaVacina.dose" class="labelinput"><b>Digite a dose da vacina:</b> </label>
+                </div>
+                <br><br>
+                <button type="submit" class="submit" ng-click="adicionaVacina()">Adicionar</button>
+            </div><br><br>
+
+            <div class="inputBox">
+                <input type="text" name="searchItem" class="inputUser" ng-model="searchItem" required>
+                <label for="searchItem" class="labelinput"><b>Filtrar</b></label>
+            </div><br><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome da vacina</th>
+                        <th>Dose</th>
+                        <th></th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    <tr ng-repeat="vacina in vacinas | filter: searchItem" class="item">
+                        <td>{{ vacina.nome }}</td>
+                        <td>{{ vacina.dose }}</td>
+                        <td><span class="material-symbols-outlined clique" ng-click="removeVacina($index)">delete</span></td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <p ng-show="vacinas.length === 0">Nenhum item na lista</p>
+        </fieldset>
+    </div>
+    </container>
+
+
 
 <footer>
     <div class="footer-header">
