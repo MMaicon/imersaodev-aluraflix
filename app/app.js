@@ -1,0 +1,1 @@
+var ComprasApp = angular.module('ComprasApp', []);
